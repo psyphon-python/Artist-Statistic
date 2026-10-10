@@ -1,0 +1,129 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: radial-gradient(circle at center, #0a0a16 0%, #020205 100%);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #c0fefc;
+  min-height: 100vh;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.site-wrapper {
+  width: 100%;
+  max-width: 900px;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.window-card {
+  background: rgba(10, 15, 25, 0.85);
+  border-radius: 8px;
+  padding: 25px;
+  position: relative;
+  box-shadow: inset 0 0 15px rgba(0, 255, 255, 0.05),
+              0 8px 32px rgba(0, 0, 0, 0.7);
+  border: 1px solid rgba(0, 255, 255, 0.2);
+  border-image: linear-gradient(to bottom, #ffffff, #7a9a9a, #203a3a) 1;
+}
+
+.container {
+  text-align: center;
+}
+
+h1 {
+  font-size: 2.5rem;
+  color: #00ffff;
+  text-shadow: 0 0 10px rgba(0, 255, 255, 0.6), 0 0 20px rgba(0, 255, 255, 0.3);
+  margin-bottom: 8px;
+  letter-spacing: 2px;
+}
+
+p {
+  color: #ff00ff;
+  text-shadow: 0 0 8px rgba(255, 0, 255, 0.4);
+  font-size: 1.05rem;
+}
+
+.gallery h2 {
+  color: #00ffff;
+  text-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
+  margin-bottom: 15px;
+  text-align: center;
+  letter-spacing: 1px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+  gap: 15px;
+  justify-items: center;
+  margin-top: 10px;
+}
+
+.grid img {
+  max-width: 150px;
+  height: 140px;
+  object-fit: cover;
+  border-radius: 6px;
+  border: 1px solid #00ffff;
+  display: block;
+  margin: 0 auto;
+  box-shadow: 0 0 10px rgba(0, 255, 255, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.grid img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px #00ffff, 0 0 30px #ff00ff;
+  border-color: #ff00ff;
+}
+
+.artist-stat {
+  text-align: center;
+}
+
+.artist-name {
+  font-size: 1.5rem;
+  color: #00ffff;
+  text-shadow: 0 0 10px rgba(0, 255, 255, 0.6);
+  margin-bottom: 12px;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+.artist-info h3 {
+  color: #00ffaa;
+  margin-bottom: 6px;
+  text-shadow: 0 0 8px rgba(0, 255, 170, 0.4);
+}
+
+.artist-info p {
+  color: #ff77ff;
+  font-size: 0.95rem;
+}
+
+@media (max-width: 600px) {
+  body {
+    padding: 10px;
+  }
+  
+  h1 {
+    font-size: 1.8rem;
+  }
+  
+  .window-card {
+    padding: 15px;
+  }
+
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
