@@ -1,107 +1,35 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-body {
-  background: linear-gradient(135deg, #00ffff, #ff00ff);
-  font-family: 'Arial Black', sans-serif;
-  color: #000;
-  overflow: hidden;
-  padding: 20px;
-  animation: pulse 4s infinite;
-}
+/* --- CSS in style.css --- */
 
 .container {
-  text-align: center;
-  font-size: 3rem;
-  color: #00ff00;
-  text-shadow: 0 0 10px #00ff00, 0 0 20px #00ff00;
-  animation: pulse 2s infinite;
+    max-width: 1200px; /* Optional: Keeps your whole content area from stretching too wide */
+    margin: 0 auto;
+    padding: 20px;
 }
 
-h1 {
-  animation: pulse 2s infinite;
-}
-
-p {
-  color: #ff00ff;
-  text-shadow: 0 0 5px #ff00ff;
-}
-
+/* --- Gallery Layout --- */
 .gallery {
-  margin-top: 30px;
-  text-align: center;
-}
-
-.gallery h2 {
-  color: #00ff00;
-  text-shadow: 0 0 10px #00ff00;
-  margin-bottom: 10px;
+    /* Basic container styling */
+    text-align: center;
 }
 
 .grid {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 10px;
-  margin-top: 10px;
+    display: grid;
+    /* This setup creates responsive columns. It tries to fit as many 300px images as possible. */
+    /* This is the key to letting them be "full size" based on screen width. */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+    gap: 15px; /* Space between images */
+    margin-top: 20px;
 }
 
+/* --- Image Display Rule (The MOST IMPORTANT PART) --- */
 .grid img {
-  width: 120px;
-  height: 120px;
-  border-radius: 12px;
-  box-shadow: 0 0 10px #00ffff, 0 0 20px #00ffff;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  border: 2px solid #ff00ff;
+    width: 100%;      /* Image will take up 100% of the space given to it by the grid column */
+    height: auto;     /* CRITICAL: This preserves your 1600:900 aspect ratio */
+    display: block;   /* Good for layout consistency */
 }
 
-.grid img:hover {
-  transform: scale(1.1);
-  box-shadow: 0 0 20px #00ff00, 0 0 30px #00ff00;
-}
-
+/* --- Footer Styling --- */
 .artist-stat {
-  text-align: center;
-  margin-top: 40px;
-  padding: 20px;
-  background: rgba(255, 255, 255, 0.1);
-  color: #00ff00;
-  font-size: 1.3rem;
-  border-radius: 15px;
-  border: 2px solid #00ff00;
-  box-shadow: 0 0 30px #00ff00, 0 0 60px #00ff00;
-  display: inline-block;
-  animation: pulse 4s infinite;
-}
-
-.artist-name {
-  font-size: 1.8rem;
-  color: #00ff00;
-  text-shadow: 0 0 15px #00ff00, 0 0 30px #00ff00;
-}
-
-.artist-stat h3 {
-  color: #00ff00;
-  margin-bottom: 8px;
-  text-shadow: 0 0 10px #00ff00;
-}
-
-.artist-stat p {
-  color: #ff00ff;
-  font-size: 1.1rem;
-  text-shadow: 0 0 5px #ff00ff;
-}
-
-@keyframes pulse {
-  0%, 100% {
-    transform: translateY(0) scale(1);
-    box-shadow: 0 0 10px #00ffff, 0 0 20px #00ffff;
-  }
-  50% {
-    transform: translateY(-5px) scale(1.02);
-    box-shadow: 0 0 15px #00ffff, 0 0 30px #00ffff;
-  }
+    text-align: center;
+    padding: 30px 0;
 }
